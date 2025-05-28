@@ -29,22 +29,23 @@ jobs:
       DATABASE_URL: postgres://postgres:postgres@localhost:5432/test_db
 
     steps:
-    - uses: actions/checkout@v3
+      - name: Clona el repositori
+        uses: actions/checkout@v3
 
-    - name: Set up Python 3.12
-      uses: actions/setup-python@v4
-      with:
-        python-version: 3.12
+      - name: Instal·la Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+      - name: Instal·la les dependències
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-    - name: Run migrations
-      run: |
-        python manage.py migrate
+      - name: Executa les migracions
+        run: |
+          python manage.py migrate
 
-    - name: Run tests
-      run: |
-        python manage.py test
+      - name: Executa els tests unitaris
+        run: |
+          python manage.py test
