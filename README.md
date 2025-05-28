@@ -16,13 +16,14 @@ Segueix aquests passos per fer-lo funcionar localment:
 git clone https://github.com/jibbyjallow/blog-django.git
 cd blog-django
 
+### 2. Instal·la les dependències
 python -m venv venv
 source venv/bin/activate     # Linux/macOS
 venv\Scripts\activate        # Windows
 
 pip install -r requirements.txt
 
- Executa les migracions
+### 3. Executa les migracions
 python manage.py migrate
 
 Executar el servidor localment
