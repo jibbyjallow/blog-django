@@ -1,11 +1,17 @@
-# Blog Django 📘
+# 📘 Blog Django
 
-## 🧾 Introducció
-Aquest projecte és un blog desenvolupat amb Django dins el mòdul de Programació. L’objectiu principal és crear una aplicació web on es puguin publicar articles, consultar-los i associar-los a autors i etiquetes.
+Aquest és un projecte desenvolupat amb **Django** com a part del mòdul de Programació del cicle de Desenvolupament d’Aplicacions Web.
+
+## 📌 Introducció
+
+L'objectiu principal d'aquest projecte és crear una aplicació web de tipus **blog**, on es poden publicar articles, gestionar autors i etiquetes, i consultar les notícies disponibles. El projecte permet també afegir comentaris a les entrades.
 
 ## 🚀 Instal·lació ràpida
 
-### 1. Clonar el repositori
+Segueix aquests passos per fer-lo funcionar localment:
+
+### 1. Clona el repositori
+
 ```bash
 git clone https://github.com/jibbyjallow/blog-django.git
 cd blog-django
