@@ -1,0 +1,266 @@
+/* -------------------- Estils generals -------------------- */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+main {
+    padding: 20px;
+}
+
+/* -------------------- Navbar -------------------- */
+.nav {
+    background-color: #222;
+    padding: 10px;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav li {
+    margin-right: 20px;
+}
+
+.nav-link {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ddd;
+}
+
+.bg-info {
+    background-color: #000203 !important;
+}
+
+.link-light {
+    color: white !important;
+}
+
+/* -------------------- Imatge del header -------------------- */
+.header-image {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+/* -------------------- Secció de benvinguda opcional -------------------- */
+.welcome-section, #welcome {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: white;
+}
+
+.welcome-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.welcome-section p {
+    color: #666;
+    font-size: 1.2em;
+}
+
+/* -------------------- Contingut principal -------------------- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+    font-size: 2.5rem;
+}
+
+/* -------------------- Graella de posts -------------------- */
+.posts-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.post-card {
+    width: 300px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.card-image img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-image.placeholder {
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 180px;
+    font-size: 3rem;
+    color: #888;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card-description {
+    color: #555;
+    font-size: 1em;
+}
+
+/* -------------------- Darrers posts -------------------- */
+.latest-posts {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.posts-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 20px;
+}
+
+.section-title {
+    margin-bottom: 10px;
+}
+
+/* -------------------- Footer -------------------- */
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+    background-color: #222;
+    margin-top: 40px;
+}
+
+/* image detail post page */
+.post-image img {
+  width: 400px;        /* amplada fixa */
+  height: 250px;       /* alçada fixa */
+  object-fit: cover;   /* retalla la imatge per omplir la caixa sense deformar */
+  border-radius: 8px;  /* opcional, cantonades rodones */
+  display: block;
+  margin: 10px 0;
+}
+
+/* author_list page */
+.author-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.author-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.btn-detail {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 12px;
+  background-color: #2d89ef;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.btn-detail:hover {
+  background-color: #1b5dab;
+}
+
+
+/* pagina tags */
+
+.tag-list {
+  margin-top: 10px;
+}
+
+.tag-pill {
+  display: inline-block;
+  background-color: #000000;
+  color: rgb(255, 253, 253);
+  padding: 8px 14px;           /* Més espai dins cada etiqueta */
+  margin: 6px;
+  border-radius: 20px;         /* Cantonades més arrodonides */
+  text-decoration: none;
+  font-size: 25px;             /* ← MÉS GRAN */
+  font-weight: bold;           /* Ja que has posat <strong> dins */
+  transition: background-color 0.3s;
+}
+
+
+.tags-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-weight: bolder;
+}
+
+
+.posts-list {
+  display: flex;
+  flex-direction: row; /* per defecte ja és fila, però per claritat */
+  gap: 20px;           /* espai entre cards */
+  overflow-x: auto;    /* si hi ha molts posts, permet fer scroll horitzontal */
+  padding: 10px 0;
+}
+
+.post-card {
+  flex: 0 0 auto;      /* fa que cada card tingui la seva amplada fixa i no s’estiri */
+  width: 300px;        /* amplada fixa de cada post, pots ajustar-la */
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.post-author a {
+  color: blue;
+  text-decoration: underline;
+}
+
+
+
+

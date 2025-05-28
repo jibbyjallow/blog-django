@@ -1,0 +1,23 @@
+{% extends "blog/base.html" %}
+{% block title %}{{ author.first_name }} {{ author.last_name }} - Detalls de l'Autor{% endblock %}
+{% block header_image %}
+{% endblock %}
+{% block content %}
+  <h1>Detalls de l'Autor</h1>
+
+  <p><strong>Nom:</strong> {{ author.first_name }}</p>
+  <p><strong>Cognom:</strong> {{ author.last_name }}</p>
+  <p><strong>Adreça:</strong> {{ author.email }}</p>
+
+  <h2>Posts publicats per {{ author.first_name }} {{ author.last_name }}</h2>
+
+  {% if posts %}
+    <div class="posts-list">
+      {% for post in posts %}
+        {% include "blog/post_card.html" %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>Aquest autor no ha publicat cap post.</p>
+  {% endif %}
+{% endblock %}

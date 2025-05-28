@@ -1,0 +1,28 @@
+{% extends "blog/base.html" %}
+{% block title %}Llista d'Autors - Blog M3-UF6{% endblock %}
+{% block header_image %}
+{% endblock %}
+{% block content %}
+
+    <h1>Llista d'Autors</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Cognom</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for author in authors %}
+      <tr>
+        <td>{{ author.first_name }}</td>
+        <td>{{ author.last_name }}</td>
+        <td>
+          <a href="{% url 'author_detail' author.id %}" class="btn-detail">Saber-ne més</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% load static %}
+<div class="post-card">
+  <div class="card-image">
+    {% if post.image_name %}
+       <img src="{% static 'blog/' %}{{ post.image_name }}" alt="{{ post.title }}">
+    {% else %}
+      <div class="card-image placeholder">🖼️</div>
+    {% endif %}
+  </div>
+  <div class="card-content">
+    <h2 class="card-title">
+      <a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a>
+    </h2>
+    <p class="card-description">
+      Publicat el {{ post.date|date:"d/m/Y" }} per {{ post.author.first_name }} {{ post.author.last_name }}
+    </p>
+  </div>
+</div>

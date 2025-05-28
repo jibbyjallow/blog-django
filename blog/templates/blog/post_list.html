@@ -1,0 +1,13 @@
+{% extends "blog/base.html" %}
+{% block title %}Llistat de Posts - Blog M3-UF6{% endblock %}
+{% block header_image %}
+{% endblock %}
+{% load static %}
+{% block content %}
+<h1 class="page-title">Tots els posts</h1>
+<div class="posts-grid">
+  {% for post in posts %}
+    {% include "blog/post_card.html" with post=post %}
+  {% endfor %}
+</div>
+{% endblock %}

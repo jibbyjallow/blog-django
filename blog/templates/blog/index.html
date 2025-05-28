@@ -1,0 +1,12 @@
+{% extends "blog/base.html" %}
+{% block title %}Inici - Blog M3-UF6{% endblock %}
+{% load static %}
+{% block content %}
+<h1 class="page-title">Els darrers posts</h1>
+<div class="posts-grid">
+  {% for post in posts %}
+    {% include "blog/post_card.html" with post=post %}
+  {% endfor %}
+</div>
+{% endblock %}
+
