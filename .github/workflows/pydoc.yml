@@ -9,6 +9,9 @@ jobs:
   build-docs:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write  # ✅ AIXÒ DONA PERMISOS AL BOT PER FER PUSH
+
     steps:
     - name: Check out repo
       uses: actions/checkout@v3
