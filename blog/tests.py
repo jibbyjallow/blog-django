@@ -1,10 +1,8 @@
-from django.test import TestCase
-
-# Create your tests here.
 from django.test import TestCase, Client
 from django.urls import reverse
 from .models import Author, Post, Tag
 from django.db.utils import IntegrityError
+from datetime import date  # Per afegir la data al model Post
 
 class TagModelTest(TestCase):
 
@@ -25,7 +23,7 @@ class TagModelTest(TestCase):
 class AuthorModelTest(TestCase):
 
     def setUp(self):
-        self.author = Author.objects.create(first_name="John", last_name="Doe")
+        self.author = Author.objects.create(first_name="John", last_name="Doe", email="john@example.com")
 
     def test_author_creation(self):
         self.assertEqual(self.author.first_name, "John")
@@ -38,11 +36,14 @@ class AuthorModelTest(TestCase):
 class PostModelTest(TestCase):
 
     def setUp(self):
-        self.author = Author.objects.create(first_name="John", last_name="Doe")
+        self.author = Author.objects.create(first_name="John", last_name="Doe", email="john@example.com")
         self.post = Post.objects.create(
             title="Test Post",
             slug="test-post",
             content="Contingut de prova",
+            excerpt="Resum",
+            image_name="test.jpg",
+            date=date.today(),  # AFEGIT
             author=self.author,
         )
 
@@ -59,14 +60,18 @@ class URLTests(TestCase):
 
     def setUp(self):
         self.client = Client()
-        self.author = Author.objects.create(first_name="John", last_name="Doe")
+        self.author = Author.objects.create(first_name="John", last_name="Doe", email="john@example.com")
+        self.tag = Tag.objects.create(tag="django")
         self.post = Post.objects.create(
             title="Test Post",
             slug="test-post",
             content="Contingut de prova",
+            excerpt="Resum",
+            image_name="test.jpg",
+            date=date.today(),  # AFEGIT
             author=self.author,
         )
-        self.tag = Tag.objects.create(tag="django")
+        self.post.tags.add(self.tag)
 
     def test_index_url(self):
         response = self.client.get(reverse('index'))

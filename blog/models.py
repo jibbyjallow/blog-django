@@ -10,7 +10,7 @@ class Author(models.Model):
         return f"{self.first_name} {self.last_name}"
 
 class Tag(models.Model):
-    tag = models.CharField(max_length=100)
+    tag = models.CharField(max_length=100, unique=True)
 
     def __str__(self):
         return self.tag
