@@ -36,3 +36,9 @@ source venv/bin/activate     # Linux/macOS
 venv\Scripts\activate        # Windows
 
 
+## 📄 Documentació
+
+👉[Veure documentació generada amb pydoc](https://jibbyjallow.github.io/blog-django/)
+
+
+
